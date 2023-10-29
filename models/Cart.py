@@ -15,7 +15,7 @@ def calculate_total(
 ) -> float:  # type hinting, not forced, -> float means return float
     validation_error = validate_input(no_items, price, tax)
 
-    if validation_error is not None:
+    if validation_error != None:
         raise ValueError(validation_error)
 
     total = float(no_items * price * (1 + tax / 100))
