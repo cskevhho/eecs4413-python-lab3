@@ -2,14 +2,14 @@
 
 {% block body %}
 
-<p>You Entered:</p>
-<ul>
-    <li>Number of Items: {{ no_items }}</li>
-    <li>Price of Each Item: {{ "%.2f"|format(price) }} </li>
-    <li>Tax Rate: {{ tax }}%</li>
-</ul>
-<p>The total price is calculated as:</p>
-<p>total = no_items * price * (1 + tax / 100)</p>
-<p>The total price is: {{ "%.2f"|format(total) }}</p>
+<form action="/shoppingcart" method="post" id="cart_form">
+    <fieldset>
+        <legend>Enter Shopping Cart Details</legend>
+        Number of Items: <input type="text" id="no_items" name="no_items"><br>
+        Price per Item: <input type="text" id="price" name="price"><br>
+        Tax Rate: <input type="text" id="tax" name="tax"><br>
+        <input type="submit" value="Calculate">
+    </fieldset>
+</form>
 
 {% endblock %}

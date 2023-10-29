@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<div class="calculator-results">
+
+    <p>You Entered:</p>
+<ul>
+    <li>Number of Items: {{ no_items }}</li>
+    <li>Price of Each Item: {{ "%.2f"|format(price) }} </li>
+    <li>Tax Rate: {{ tax }}%</li>
+</ul>
+<p>The total price is calculated as:</p>
+<p>total = no_items * price * (1 + tax / 100)</p>
+<p>The total price is: {{ "%.2f"|format(total) }}</p>
+</div>
+
+{% endblock %}
